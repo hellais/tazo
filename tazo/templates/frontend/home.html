@@ -1,0 +1,26 @@
+{% from "macros/_form.html" import render_form %}
+
+{% set page_title = 'Submit new URL' %}
+
+{% extends "layouts/base.html" %}
+
+{% block body %}
+  <div class="row">
+  <h2>Welcome!</h2>
+  </div>
+  <div class="row">
+    <p>With this web interface you can contribute URLs for testing to the
+      citizen-lab test-lists repository.</p>
+    <p>Select a country that you would like to contribute test lists for to
+      begin.</p>
+  </div>
+  <div class="col-md-3">
+    <a href="/country/global">Global</a>
+  </div>
+  {% for country_code, country_name in countries %}
+    <div class="col-md-3">
+      <a href="/country/{{ country_code }}">{{ country_name }}</a>
+    </div>
+  {% endfor %}
+{% endblock %}
+

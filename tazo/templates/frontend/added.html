@@ -1,0 +1,17 @@
+{% from "macros/_form.html" import render_form %}
+
+{% set page_title = 'Added' %}
+
+{% extends "layouts/base.html" %}
+
+{% block body %}
+  <h2>Added the following URLs</h2>
+  <ul>
+    {% for new_url in new_urls %}
+      <li>{{ new_url.url }} - {{ new_url.category }} - {{ new_url.country }}</li>
+    {% endfor %}
+  </ul>
+  <p>Look at <a href="https://github.com/{{ target_repo
+      }}/pulls">https://github.com/{{ target_repo }}/pulls</a> to see when your contribution is accepted</p>
+{% endblock %}
+

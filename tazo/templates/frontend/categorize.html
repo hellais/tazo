@@ -1,0 +1,18 @@
+{% from "macros/_form.html" import render_form %}
+
+{% set page_title = 'Categorise the URLs' %}
+
+{% extends "layouts/base.html" %}
+
+{% block body %}
+  <div class="row">
+    <h2>Categorize the URLS</h2>
+    <p>Please now categorise the URLs</p>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      {{ render_form(url_for('frontend.add'), form)}}
+    </div>
+  </div>
+{% endblock %}
+

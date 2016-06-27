@@ -1,0 +1,27 @@
+{% from "macros/_form.html" import render_form %}
+
+{% set page_title = 'Submit new URL' %}
+
+{% extends "layouts/base.html" %}
+
+{% block body %}
+  <div class="row">
+    <h2>Submit new URLS for testing</h2>
+    <p>You can enter one URL per line</p>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      {{ render_form(url_for('frontend.show_country',
+                             country_code=country_code), form)}}
+    </div>
+  </div>
+  <h2>Existing URLs</h2>
+  {% for url in existing_urls %}
+  <div class="row">
+    <div class="col-md-12">
+      {{ url["url"] }} - {{ url["category_description"] }}
+    </div>
+  </div>
+  {% endfor %}
+{% endblock %}
+

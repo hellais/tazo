@@ -1,0 +1,6 @@
+Flask>=0.10.1
+Flask-WTF
+Flask-Script
+celery
+pygithub
+redis
